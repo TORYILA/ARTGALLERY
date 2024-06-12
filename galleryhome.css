@@ -1,0 +1,254 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.light-mode {
+    padding: 0;
+    background-color: rgb(202, 186, 186);
+    color: black;
+}
+
+body.dark-mode {
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.maindiv {
+    width: 100%;
+    height: 450px;
+    background-image: url('ART6-light.JPG');
+    background-position-y: bottom;
+    margin-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 70px;
+    font-family: "Gwendolyn", cursive;
+    font-weight: 700;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 100px;
+    background-color: black;
+}
+
+.enterbttn {
+    background-color: rgb(16, 53, 16);
+    border: none;
+    height: 50px;
+    width: 150px;
+    color: white;
+    margin-top: 30%;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.enterbttn:hover {
+    background-color: rgb(62, 150, 62);
+}
+
+.joinbtn {
+    height: 30px;
+    width: 100px;
+    background-color: rgb(71, 42, 71);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.middlesec {
+    width: 65%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.categorysearch {
+    width: 90%;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: solid 1px;
+    padding-left: 5px;
+}
+
+.herowrite {
+    text-align: center;
+    color: white;
+}
+
+.bigtext {
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+.smalltext {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.whitebg {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightordark2 {
+    height: 18px;
+    border: solid 1px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.lightordark2 p {
+    margin: 0;
+    display: inline-block;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.photodisplay {
+    width: 100%;
+    height: 400px;
+    min-width: 160px;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: white;
+    border-bottom: solid 1px black;
+    padding: 5px;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.searchbtn img {
+    width: 20px;
+}
+
+.searchbtn {
+    position: absolute;
+    right: 0;
+    left: 90%;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 28px;
+    background-color: rgb(182, 169, 127);
+    cursor: pointer;
+}
+
+.backtotop {
+    border: none;
+    background-color: rgb(153, 100, 100);
+    position: fixed;
+    top: 50%;
+    left: 1%;
+    z-index: 20;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.like-button {
+    background-color: black;
+    font-size: 2em;
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: none;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.like-button.liked {
+    color: red;
+}
+
+.displayphotondlike:hover .like-button {
+    display: block;
+}
+
+.displayphotondlike {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.favorites{
+    visibility: hidden;
+    display: grid;
+    position: fixed;
+    top:70px;
+    background-color: white;
+    grid-template-columns: 1fr 1fr 1fr;
+    z-index: 20;
+}
+.favshow{
+    visibility: visible;
+    
+}
+.favbut{
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+.favbut img{
+    width: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .maindiv{
+        background-position-x: center;
+    }
+    .lightordark2 p {
+        display: none;
+    }
+
+    .images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+.favorites{
+    grid-template-columns: 1fr 1fr;
+}
+}

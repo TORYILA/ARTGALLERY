@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites Toggle</title>
+    <style>
+        .favorites {
+            visibility: hidden;
+            display: flex;
+            position: absolute;
+            top: 29px;
+            width: 100%;
+            background-color: blue;
+            z-index: 20;
+        }
+        .favshow {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleFavorites">Favorites</button>
+    <div class="favorites"></div>
+
+    <script>
+        document.querySelector("#toggleFavorites").addEventListener("click", function () {
+            document.querySelector(".favorites").classList.toggle('favshow');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:"roboto", sans-serif ;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,50,0.5), rgba(0,0,50,0.5)), url(castepic.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .usericon, .lockicon,.mailicon{
+            width: 4vh;
+            margin-left: 15px;
+            color: #999;
+        }
+        .inputgroup{
+            position: absolute;
+            max-width: 450px;
+            width: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #e0fcfd;
+            padding: 50px 60px 70px;
+            text-align: center;
+            border-radius: 5%;
+        }
+        .inputgroup h1{
+            font-size: 30px;
+            margin-bottom: 60px;
+            color: purple;
+            position: relative;
+        }
+        .inputgroup h1::after{
+            content: '';
+            width: 30px;
+            height: 4px;
+            border-radius: 3px;
+            background: purple;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .inputfield{
+            background: white;
+            margin: 15px 0;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            max-height: 65px;
+            transition: max-height 0.5s;
+            overflow: hidden;
+        }
+        input{
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            padding: 18px 15px;
+        }
+        form p{
+            text-align: left;
+            font-size: 15px;
+        }
+        .btn-field{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-field button{
+            flex-basis: 48%;
+            background: #3c00a0;
+            color: #fff;
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            transition: background 1s;
+        }
+        .inputside{
+            height: 280px;
+        }
+        .btn-field button.disable{
+            background:#eaeaea ;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inputgroup">
+         <h1 id="title">Sign-up</h1>
+
+         <form>
+        <div class="inputside">
+            <div id="namefield" class="inputfield">
+                <img class="usericon" src="icons/user.png" alt="">
+                <input type="text" placeholder="name">
+            </div>
+
+            <div class="inputfield">
+                <img class="mailicon" src="icons/mail.svg" alt="">
+                <input type="email" placeholder="mail">
+                <div id="errormsg"></div>
+            </div>
+
+            <div class="inputfield">
+                <img class="lockicon" src="icons/lock.svg" alt="">
+                <input type="text" placeholder="password">
+                <div id="errormsg"></div>
+            </div>
+            <p>Forgot password? <a href="">Click here!</a></p>
+        </div>
+        <div class="btn-field">
+            <button id="signupbtn" type="button">Sign-up</button>
+            <button id="signinbtn" type="button" class="disable">Sign-in</button>
+        </div>
+        </div>
+        </form>
+    </div>
+
+        <script>
+            let signupbtn = document.getElementById('signupbtn')
+            let signinbtn = document.getElementById('signinbtn')
+            let namefield = document.getElementById('namefield')
+            let title = document.getElementById('title')
+
+            signinbtn.onclick = function(){
+                namefield.style.maxHeight= '0'
+                title.innerHTML = 'Sign in'
+                signupbtn.classList.add('disable')
+                signinbtn.classList.remove('disable')
+            }
+            signupbtn.onclick = function(){
+                namefield.style.maxHeight= '65px'
+                title.innerHTML = 'Sign up'
+                signupbtn.classList.remove('disable')
+                signinbtn.classList.add('disable')
+            }
+        </script>
+</body>
+</html>
